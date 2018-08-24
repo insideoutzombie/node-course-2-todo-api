@@ -2,7 +2,7 @@ This is just a file full of mongoose examples from the course.
 Figured it may Help with using these as a reference.
 
 // var user = new User({
-//   email: 'dbz.yabooy.com'
+//   email: 'junkintrunk@yahoo.com'
 // });
 //
 // user.save().then((doc) => {
@@ -12,7 +12,7 @@ Figured it may Help with using these as a reference.
 // });
 
 // var newTodo = new Todo({
-//   text: 'Cook Chicken'
+//   text: 'Cook Chicken with a ninja blade'
 // });
 //
 // newTodo.save().then((doc) => {
