@@ -1,5 +1,7 @@
 // server.js is the Root of my Application
 // It is only responsible for my routess
+require('./config/config');
+
 const _ = require('lodash');
 const express = require('express');
 const bodyParser = require('body-parser');
