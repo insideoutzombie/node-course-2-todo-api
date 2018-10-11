@@ -36,9 +36,7 @@ var UserSchema = new mongoose.Schema({
 UserSchema.methods.toJSON = function () {
   var user = this;
   var userObject = user.toObject();
-// this line of code below makes it so in postman the returned data that appears is trimmed down
-// to only displaying the email address and the id its stored under. Without this then the Data
-// will return everything including the users password information.
+
   return _.pick(userObject, ['_id', 'email']);
 };
 
@@ -51,8 +49,18 @@ UserSchema.methods.generateAuthToken = function () {
 
   return user.save().then(() => {
     return token;
-  })
+  });
 };
+
+UserSchema.methods.removeToken = function (token) {
+  var user = this;
+
+  return user.update({
+    $pull: {
+      tokens: {token}
+    }
+  });
+};  
 
 UserSchema.statics.findByToken = function (token) {
   var User = this;
